@@ -16,34 +16,32 @@ endif
 
 syntax case match
 
-" equivalent to io-mode-prototype-names in io-mode.el
-syntax keyword ioType Array AudioDevice AudioMixer Block Box Buffer CFunction
-syntax keyword ioType CGI Color Curses DBM DNSResolver DOConnection DOProxy
-syntax keyword ioType DOServer Date Directory Duration DynLib Error Exception
-syntax keyword ioType FFT File Fnmatch Font Future GL GLE GLScissor GLU
-syntax keyword ioType GLUCylinder GLUQuadric GLUSphere GLUT Host Image Importer
-syntax keyword ioType LinkList List Lobby Locals MD5 MP3Decoder MP3Encoder Map
-syntax keyword ioType Message Movie Notification Number Object
-syntax keyword ioType OpenGL Point Protos Regex SGML SGMLElement SGMLParser SQLite Server Sequence
-syntax keyword ioType ShowMessage SleepyCat SleepyCatCursor Socket
-syntax keyword ioType SocketManager Sound Soup Store String Tree UDPSender
-syntax keyword ioType UPDReceiver URL User Warning WeakLink
-syntax keyword ioType true false nil Random BigNum Sequence
-
 " equivalent to io-mode-message-names in io-mode.el
-syntax keyword ioKeyword activate activeCoroCount and asString block break
-syntax keyword ioKeyword catch clone collectGarbage compileString continue
-syntax keyword ioKeyword do doFile doMessage doString else elseif exit for
-syntax keyword ioKeyword foreach forward getSlot getEnvironmentVariable hasSlot if ifFalse
-syntax keyword ioKeyword ifNil ifNilEval ifTrue isActive isNil isResumable list message
-syntax keyword ioKeyword method or parent pass pause perform
-syntax keyword ioKeyword performWithArgList print println proto raise raiseResumable
-syntax keyword ioKeyword removeSlot resend resume return
-syntax keyword ioKeyword schedulerSleepSeconds self sender
-syntax keyword ioKeyword setSchedulerSleepSeconds setSlot shallowCopy
-syntax keyword ioKeyword slotNames super system then thisBlock thisContext
-syntax keyword ioKeyword call try type uniqueId updateSlot wait while
-syntax keyword ioKeyword write yield
+syntax keyword ioKeyword continue exit forward list message
+syntax keyword ioKeyword nil parent pass pause proto resend resume 
+syntax keyword ioKeyword return self sender super thisBlock thisContext call 
+syntax keyword ioKeyword yield
+
+syntax keyword ioException catch Error raise raiseResumable try
+
+syntax keyword ioFunction activate activeCoroCount asString clone block method
+syntax keyword ioFunction collectGarbage compileString do doFile doMessage
+syntax keyword ioFunction doString getSlot getEnvironmentVariable hasSlot 
+syntax keyword ioFunction perform performWithArgList print println 
+syntax keyword ioFunction removeSlot schedulerSleepSeconds isResumable
+syntax keyword ioFunction setSchedulerSleepSeconds setSlot shallowCopy
+syntax keyword ioFunction slotNames system type uniqueId updateSlot wait write 
+syntax keyword ioFunction ifFalse ifNil ifNilEval ifTrue isActive isNil 
+
+syntax keyword ioConditional else elseif if then 
+
+syntax keyword ioRepeat for foreach map select repeat while
+
+syntax keyword ioTodo TODO FIXME XXX
+
+syntax keyword ioBoolean and false or true
+
+syn match ioType "\<[A-Z][A-Za-z]*\>" display
 
 syntax region ioOperator start=':' end='='
 syntax region ioOperator start='!' end='='
@@ -76,17 +74,22 @@ syntax region ioComment start='#' end='$' keepend
 syntax region ioComment start=/\/\*/ end=/\*\//
 syntax region ioComment start=/\/\// end=/$/ keepend
 
-highlight link ioType Type
-highlight link ioKeyword Function
-highlight link ioString String
 highlight link ioComment Comment
-highlight link ioOperator Operator
-
+highlight link ioString String
 highlight link ioHexNumber Number
 highlight link ioNumber Number
+highlight link ioBoolean Boolean
 highlight link ioFloat Float
+highlight link ioFunction Function
+highlight link ioConditional Conditional
+highlight link ioRepeat Repeat
+highlight link ioOperator Operator
+highlight link ioKeyword Keyword
+highlight link ioException Exception
+highlight link ioType Type
 highlight link ioOctalError Error
 highlight link ioError Error
+highlight link ioTodo Todo
 
 setlocal commentstring=#\ %s
 
