@@ -32,7 +32,7 @@ function GetIoIndent()
     let opened_parens = count(getline(lnum), "(")
     let closed_parens = count(getline(lnum), ")")
 
-    if opened_parens > closed_parens || getline(lnum) =~ '([^)]*$'
+    if opened_parens > closed_parens || getline(lnum) =~ '([^)]*$' || getline(lnum) =~ '^.*\\\s*$'
         let ind = ind + &sw
     elseif opened_parens < closed_parens && getline(lnum) !~ '^\s*)'
         let closed_levels = closed_parens - opened_parens
