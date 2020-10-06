@@ -35,7 +35,7 @@ syntax keyword ioFunction ifFalse ifNil ifNilEval ifTrue isActive isNil
 
 syntax keyword ioConditional else elseif if then 
 
-syntax keyword ioRepeat for foreach map select repeat while
+syntax keyword ioRepeat detect for foreach map select repeat while
 
 syntax keyword ioTodo TODO FIXME XXX
 
