@@ -88,4 +88,6 @@ highlight link ioFloat Float
 highlight link ioOctalError Error
 highlight link ioError Error
 
+setlocal commentstring=#\ %s
+
 let b:current_syntax = "io"
