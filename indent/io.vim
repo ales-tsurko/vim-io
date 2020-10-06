@@ -29,14 +29,14 @@ function GetIoIndent()
 	endif
 
 	let ind = indent(lnum)
-    let opend_parens = count(getline(lnum), "(")
+    let opened_parens = count(getline(lnum), "(")
     let closed_parens = count(getline(lnum), ")")
-    let not_after_single_close = getline(lnum) !~ '^\s*)'
 
-    if (opend_parens > closed_parens) && not_after_single_close
+    if opened_parens > closed_parens || getline(lnum) =~ '([^)]*$'
         let ind = ind + &sw
-    elseif (opend_parens < closed_parens) && not_after_single_close
-        let ind = ind - &sw
+    elseif opened_parens < closed_parens && getline(lnum) !~ '^\s*)'
+        let closed_levels = closed_parens - opened_parens
+        let ind = ind - (&sw * closed_levels)
     endif
 
     if getline(v:lnum) =~ '^\s*)'
