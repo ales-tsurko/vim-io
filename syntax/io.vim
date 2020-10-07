@@ -33,13 +33,13 @@ syntax keyword ioFunction setSchedulerSleepSeconds setSlot shallowCopy
 syntax keyword ioFunction slotNames system type uniqueId updateSlot wait write 
 syntax keyword ioFunction ifFalse ifNil ifNilEval ifTrue isActive isNil 
 
-syntax keyword ioConditional else elseif if then 
+syntax keyword ioConditional and else elseif if or then 
 
 syntax keyword ioRepeat for foreach map select repeat while
 
 syntax keyword ioTodo TODO FIXME XXX
 
-syntax keyword ioBoolean and false or true
+syntax keyword ioBoolean false true
 
 syn match ioType "\<[A-Z][A-Za-z]*\>" display
 
