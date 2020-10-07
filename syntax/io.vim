@@ -33,6 +33,8 @@ syntax keyword ioFunction setSchedulerSleepSeconds setSlot shallowCopy
 syntax keyword ioFunction slotNames system type uniqueId updateSlot wait write 
 syntax keyword ioFunction ifFalse ifNil ifNilEval ifTrue isActive isNil 
 
+syn match ioFunction "\zs\<[_a-zA-Z0-9_]\+\>\ze\s*(" display
+
 syntax keyword ioConditional and else elseif if or then 
 
 syntax keyword ioRepeat for foreach map select repeat while
@@ -41,7 +43,9 @@ syntax keyword ioTodo TODO FIXME XXX
 
 syntax keyword ioBoolean false true
 
-syn match ioType "\<[A-Z][A-Za-z]*\>" display
+syn match ioIdentifier "\zs\<[_a-zA-Z0-9_]\+\>\ze\s*:\+=[^=]" display
+
+syn match ioType "\<[A-Z][A-Za-z0-9_]*\>" display
 
 syntax region ioOperator start=':' end='='
 syntax region ioOperator start='!' end='='
@@ -80,6 +84,7 @@ highlight link ioHexNumber Number
 highlight link ioNumber Number
 highlight link ioBoolean Boolean
 highlight link ioFloat Float
+highlight link ioIdentifier Identifier
 highlight link ioFunction Function
 highlight link ioConditional Conditional
 highlight link ioRepeat Repeat
