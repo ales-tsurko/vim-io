@@ -66,10 +66,10 @@ syntax region ioString start=/"""/ skip=/\\./ end=/"""/
 
 syn match   ioHexNumber	"\<0[xX]\x\+[lL]\=\>" display
 syn match   ioHexNumber	"\<0[xX]\>" display
-syn match   ioNumber	"\<\d\+[lLjJ]\=\>" display
-syn match   ioFloat		"\.\d\+\([eE][+-]\=\d\+\)\=[jJ]\=\>" display
-syn match   ioFloat		"\<\d\+[eE][+-]\=\d\+[jJ]\=\>" display
-syn match   ioFloat		"\<\d\+\.\d*\([eE][+-]\=\d\+\)\=[jJ]\=" display
+syn match   ioNumber	"-\?\<\d\+[lLjJ]\=\>" display
+syn match   ioFloat		"-\?\.\d\+\([eE][+-]\=\d\+\)\=[jJ]\=\>" display
+syn match   ioFloat		"-\?\<\d\+[eE][+-]\=\d\+[jJ]\=\>" display
+syn match   ioFloat		"-\?\<\d\+\.\d*\([eE][+-]\=\d\+\)\=[jJ]\=" display
 
 syn match   ioOctalError	"\<0\o*[89]\d*[lL]\=\>" display
 syn match   ioError	"\<0[xX]\X\+[lL]\=\>" display
