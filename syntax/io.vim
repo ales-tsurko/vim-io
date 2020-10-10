@@ -39,8 +39,6 @@ syntax keyword ioConditional and else elseif if or then
 
 syntax keyword ioRepeat for foreach map select repeat while
 
-syntax keyword ioTodo TODO FIXME XXX
-
 syntax keyword ioBoolean false true
 
 syn match ioIdentifier "\zs\<[_a-zA-Z0-9_]\+\>\ze\s*:\+=[^=]" display
@@ -74,11 +72,13 @@ syn match   ioFloat		"-\?\<\d\+\.\d*\([eE][+-]\=\d\+\)\=[jJ]\=" display
 syn match   ioOctalError	"\<0\o*[89]\d*[lL]\=\>" display
 syn match   ioError	"\<0[xX]\X\+[lL]\=\>" display
 
-syntax region ioComment start='#' end='$' keepend
-syntax region ioComment start=/\/\*/ end=/\*\//
-syntax region ioComment start=/\/\// end=/$/ keepend
+syntax region ioComment start='#' end='$' keepend contains=ioTodo,@Spell
+syntax region ioComment start=/\/\*/ end=/\*\// contains=ioTodo,@Spell
+syntax region ioComment start=/\/\// end=/$/ keepend contains=ioTodo,@Spell
+syntax keyword ioTodo TODO FIXME XXX
 
 highlight link ioComment Comment
+highlight link ioTodo Todo
 highlight link ioString String
 highlight link ioHexNumber Number
 highlight link ioNumber Number
@@ -94,8 +94,8 @@ highlight link ioException Exception
 highlight link ioType Type
 highlight link ioOctalError Error
 highlight link ioError Error
-highlight link ioTodo Todo
 
 setlocal commentstring=#\ %s
+set spell
 
 let b:current_syntax = "io"
