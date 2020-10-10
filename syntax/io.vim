@@ -6,7 +6,6 @@
 "               Erik Garrison <erik.garrison@gmail.com>
 "
 " Packaging:    Andrei Maxim <andrei@andreimaxim.ro>
-" Last Change:  2011 Dec 16
 
 if version < 600
     syntax clear
@@ -16,7 +15,6 @@ endif
 
 syntax case match
 
-" equivalent to io-mode-message-names in io-mode.el
 syntax keyword ioKeyword continue exit forward list message
 syntax keyword ioKeyword nil parent pass pause proto resend resume 
 syntax keyword ioKeyword return self sender super thisBlock thisContext call 
@@ -98,6 +96,6 @@ highlight link ioOctalError Error
 highlight link ioError Error
 
 setlocal commentstring=#\ %s
-set spell
+autocmd FileType io setlocal spell
 
 let b:current_syntax = "io"
