@@ -73,12 +73,14 @@ syn match   ioOctalError	"\<0\o*[89]\d*[lL]\=\>" display
 syn match   ioError	"\<0[xX]\X\+[lL]\=\>" display
 
 syntax region ioComment start='#' end='$' keepend contains=ioTodo,@Spell
-syntax region ioComment start=/\/\*/ end=/\*\// contains=ioTodo,@Spell
-syntax region ioComment start=/\/\// end=/$/ keepend contains=ioTodo,@Spell
+syntax region ioComment start=/\/\*/ end=/\*\// contains=ioTodo,ioDocComment,@Spell
+syntax region ioComment start=/\/\// end=/$/ keepend contains=ioTodo,ioDocComment,@Spell
 syntax keyword ioTodo TODO FIXME XXX
+syn match ioDocComment "\(meta\)\?doc\s\+\zs\(\<[A-Za-z_0-9]\+\>\s*\)\{2\}\((.*)\)\?" display
 
 highlight link ioComment Comment
 highlight link ioTodo Todo
+highlight link ioDocComment SpecialComment
 highlight link ioString String
 highlight link ioHexNumber Number
 highlight link ioNumber Number

@@ -1,13 +1,20 @@
 # vim-io
 
-This project adds support for the [Io language][io] for the Vim editor. It 
-handles syntax highlighting for `*.io` files.
+[Io language][http://iolanguage.org/] syntax plugin for Vim.
 
-[io]: http://iolanguage.com/
+This is a fork of https://github.com/simplosophy/vim-io and, honestly, without
+any show offs this is the best vim syntax plugin for Io you'll find today.
 
-## Thanks
+It has:
 
-The original syntax highlighting file for Vim was taken from the
-[Io repository] [io-vim] and was originally written by Scott Dunlop, with fixes from Manpreet Singh, Jonathan Wright and Erik Garrison.
-
-[io-vim]: https://raw.github.com/stevedekorte/io/master/extras/SyntaxHighlighters/Vim/io.vim 
+- better indentation, including **closing bracket on the same line** style:
+```io
+    _checkDestinationSet := method(
+        if (self destination isNil, 
+            Exception raise(DestinationNotSetError clone)))
+```
+- better syntax highlighting with:
+    - more stuff highlighted
+    - spellchecking inside comments
+    - documenation comments highlighting
+    - TODO, FIXME, XXX highlighting in comments
