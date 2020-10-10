@@ -1,6 +1,6 @@
 # vim-io
 
-[Io language][http://iolanguage.org/] syntax plugin for Vim.
+[Io language](http://iolanguage.org/) syntax plugin for Vim.
 
 This is a fork of https://github.com/simplosophy/vim-io and, honestly, without
 any show offs this is the best vim syntax plugin for Io you'll find today.
