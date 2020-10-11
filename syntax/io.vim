@@ -18,7 +18,7 @@ syntax case match
 syntax keyword ioKeyword continue exit forward list message
 syntax keyword ioKeyword nil parent pass pause proto resend resume 
 syntax keyword ioKeyword self sender super thisBlock thisContext call 
-syntax keyword ioKeyword yield
+syntax keyword ioKeyword yield return
 
 syntax keyword ioException catch Error raise raiseResumable try
 
@@ -33,7 +33,7 @@ syntax keyword ioFunction ifFalse ifNil ifNilEval ifTrue isActive isNil
 
 syn match ioFunction "\zs\<[_a-zA-Z0-9_]\+\>\ze\s*(" display
 
-syntax keyword ioConditional else elseif if then 
+syntax keyword ioConditional and else elseif if or then
 
 syntax keyword ioRepeat for foreach map select repeat while
 
@@ -56,7 +56,6 @@ syntax region ioOperator start='\.' end='[^\.]'he=e-1
 syntax region ioOperator start='=' end='='
 syntax region ioOperator start='=' end=' 'he=e-1
 syntax region ioOperator start='[*/>=+-]' end='[ 0-9]'he=e-1
-syntax keyword ioOperator and or return
 
 syntax region ioString start=/"/ skip=/\\./ end=/"/
 syntax region ioString start=/"""/ skip=/\\./ end=/"""/
