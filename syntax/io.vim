@@ -74,7 +74,7 @@ syntax region ioComment start='#' end='$' keepend contains=ioTodo,@Spell
 syntax region ioComment start=/\/\*/ end=/\*\// contains=ioTodo,ioDocComment,@Spell
 syntax region ioComment start=/\/\// end=/$/ keepend contains=ioTodo,ioDocComment,@Spell
 syntax keyword ioTodo TODO FIXME XXX
-syn match ioDocComment "\(meta\)\?doc\s\+\zs\(\<[A-Za-z_0-9]\+\>\s*\)\{2\}\((.*)\)\?" display
+syn match ioDocComment "\(meta\)\?doc\s\+\zs\(\<[A-Za-z_0-9]\+\>\s*\)\{2\}\(([^)]*)\)\?" display
 
 highlight link ioComment Comment
 highlight link ioTodo Todo
